@@ -1,0 +1,6 @@
+flask
+flask-cors
+shapely
+sqlalchemy < 2
+GeoAlchemy2
+psycopg2
