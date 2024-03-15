@@ -10,19 +10,23 @@ services:
     restart: unless-stopped
 
   api:
-    build: ./backend
+    build:
+      dockerfile: ./backend/Dockerfile
+      network: host
     ports:
       - '5000:5000'
     volumes:
       - './backend:/app'
     depends_on:
-     - db
+      - db
     environment:
       - DB_HOST=db
     restart: on-failure:10
 
   web:
-    build: ./frontend
+    build:
+      dockerfile: ./frontend/Dockerfile
+      network: host
     ports:
       - '4200:4200'
     volumes:
