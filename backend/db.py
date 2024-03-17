@@ -45,3 +45,17 @@ def get_all():
     with eng.connect() as conn:
         cur = conn.execute(sa.select([table.c.id, table.c.name, table.c.geometry.ST_AsGeoJSON().label('geometry')]))
         return to_geojson(cur)
+
+
+def get_intersection():
+    with eng.connect() as conn:
+        cur = conn.execute(
+            """
+            select 1 AS id, 'C' as name, ST_AsGeoJSON(ST_Intersection(
+                (select geometry from app.points where name = 'A'),
+                (select geometry from app.points where name = 'B')
+            )) AS geometry
+            ;
+            """
+        )
+        return to_geojson(cur)

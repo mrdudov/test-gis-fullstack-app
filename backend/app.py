@@ -6,9 +6,14 @@ app = Flask(__name__)
 cors = CORS(app)
 
 
-@app.route('/')
+@app.route("/")
 def default():
     return db.get_all()
+
+
+@app.route("/intersection")
+def get_intersection():
+    return db.get_intersection()
 
 
 if __name__ == "__main__":
