@@ -11,6 +11,14 @@ def default():
     return db.get_all()
 
 
+@app.route("/get-a")
+def get_a():
+    return db.get_A()
+
+@app.route("/get-b")
+def get_b():
+    return db.get_B()
+
 @app.route("/intersection")
 def get_intersection():
     return db.get_intersection()
