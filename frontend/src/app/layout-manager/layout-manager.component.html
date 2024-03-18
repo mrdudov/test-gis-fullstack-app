@@ -1,0 +1,54 @@
+<div class="layout-selector">
+  <fieldset>
+    <legend>Компонент управления</legend>
+    <p>Выберите просмотр слоя</p>
+    <div>
+      <input
+        type="radio"
+        id="A-only"
+        name="layout-view"
+        value="A-only"
+        [formControl]="sel"
+        (change)="onChange()"
+        checked
+      />
+      <label for="A-only">Показать только А</label>
+    </div>
+
+    <div>
+      <input
+        type="radio"
+        id="B-only"
+        name="layout-view"
+        value="B-only"
+        [formControl]="sel"
+        (change)="onChange()"
+      />
+      <label for="B-only">Показать только В</label>
+    </div>
+
+    <div>
+      <input
+        type="radio"
+        id="A-and-B"
+        name="layout-view"
+        value="A-and-B"
+        [formControl]="sel"
+        (change)="onChange()"
+      />
+      <label for="A-and-B">Показать А и В </label>
+    </div>
+
+    <div>
+      <input
+        type="radio"
+        id="A-intersect-B"
+        name="layout-view"
+        value="A-intersect-B"
+        [formControl]="sel"
+        (change)="onChange()"
+      />
+      <label for="A-intersect-B">Показать пересечение А и В</label>
+    </div>
+  </fieldset>
+</div>

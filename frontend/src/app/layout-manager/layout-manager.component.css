@@ -1,0 +1,20 @@
+p,
+label {
+    font:
+        1rem 'Fira Sans',
+        sans-serif;
+    cursor: pointer;
+}
+
+input {
+    margin: 0.4rem;
+    cursor: pointer;
+}
+
+.layout-selector {
+    position: absolute;
+    background-color: white;
+    z-index: 20;
+    right: 2rem;
+    bottom: 2rem;
+}
